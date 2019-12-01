@@ -85,7 +85,8 @@ import { EmailComponent } from './email/email.component';
     WallpaperModule,
     ContainerComponent,
     EmailComponent
-  ]
+  ],
+  entryComponents: [EmailComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

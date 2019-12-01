@@ -44,7 +44,7 @@ export class SpeechTopicsComponent implements OnInit {
     },
     {
       name: '10 Career Essentials',
-      title: 'You had me at hello: How to Engage and Energize Your Audience',
+      title: '10 Career Essentials: Career Success is all about Character',
       description: `Increasingly, employers are looking to hire and maintain employees who not only know how to read and write, but also how to confront issues diplomatically, work well with all types of people, and demonstrate a high level of integrity. Upon analyzing several national survey reports spanning over thousands of company recruiters, 10 primary skills and traits surfaced, including teamwork, interpersonal skills, appreciating diversity, leadership, honesty, integrity, and facing adversity (as featured in Becoming The Best Me, 3rd ed.). These 10 career essentials will be highlighted in this seminar, including strategies on how to utilize them on the job in order to experience career success!`
     }
   ];

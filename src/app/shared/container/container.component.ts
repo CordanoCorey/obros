@@ -1,8 +1,11 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { MatDialog } from '@angular/material';
 import { SmartComponent, ViewSettingsActions, windowHeightSelector, windowWidthSelector, Image, build } from '@caiu/library';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+
+import { EmailComponent } from '../email/email.component';
 
 @Component({
   selector: 'obros-container',
@@ -25,7 +28,7 @@ export class ContainerComponent extends SmartComponent implements OnInit {
   windowWidth = 0;
   windowWidth$: Observable<number>;
 
-  constructor(public store: Store<any>, private elementRef: ElementRef) {
+  constructor(public store: Store<any>, public dialog: MatDialog, private elementRef: ElementRef) {
     super(store);
     this.windowHeight$ = windowHeightSelector(store);
     this.windowWidth$ = windowWidthSelector(store);
@@ -53,6 +56,13 @@ export class ContainerComponent extends SmartComponent implements OnInit {
 
   ngOnInit() {
     this.sync(['windowHeight', 'windowWidth']);
+    this.windowWidth$.subscribe(x => { console.log(x); });
+  }
+
+  openEmail() {
+    this.openDialog(EmailComponent, {
+      width: '800px'
+    });
   }
 
   changeTheme() {

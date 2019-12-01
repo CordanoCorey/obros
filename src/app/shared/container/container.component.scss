@@ -21,11 +21,6 @@
     // align-items: center;
     // justify-content: center;
     @include gradient2();
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
     .keyword {
       color: $jaz-light-blue;

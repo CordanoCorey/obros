@@ -12,10 +12,8 @@
 
 
   .tagline {
-    width: 100%;
-    color: #08415c;
-    color: #0B4F6C;
-    color: #cfcfcf;
+    color: $theme-white;
+    color: #1A2B3C;
     font-size: 48px;
     font-family: 'Marcellus SC', serif;
     width: 35%;
@@ -26,5 +24,34 @@
     width: 60%;
     opacity: 0.3;
     margin-left: -8%;
+  }
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+
+  #home {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+
+    .tagline {
+      color: $theme-white;
+      font-size: 28px;
+      font-family: 'Marcellus SC', serif;
+      width: 90%;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      opacity: 0.3;
+      justify-self: flex-end;
+    }
   }
 }
