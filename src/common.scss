@@ -1,9 +1,76 @@
 @import '~@angular/material/_theming';
 
-$primary-palette: $mat-indigo;
-$accent-palette: $mat-amber;
+$primary-palette: (50: #4095be,
+  100: #2C6783,
+  200: #275b74,
+  300: #175370,
+  400: #0b5b80,
+  500: #08415c,
+  600: #06344a,
+  700: #022F45,
+  800: #022e43,
+  900: #011D2A,
+  A100: #2C6783,
+  A200: #175370,
+  A400: #022F45,
+  A700: #011D2A,
+  contrast: (50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white));
+$accent-palette: (50: #eb8c9b,
+  100: #E77688,
+  200: #e36075,
+  300: #C24458,
+  400: #d1364d,
+  500: #A62639,
+  600: #c62d44,
+  700: #860D20,
+  800: #780009,
+  900: #5E0007,
+  A100: #E77688,
+  A200: #C24458,
+  A400: #860D20,
+  A700: #5E0007,
+  contrast: (50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white));
 $primary-color: mat-color($primary-palette, 500);
 $accent-color: mat-color($accent-palette, 500);
+
+$jaz-primary: #00ADEF;
+$jaz-accent: #ED3101;
+$jaz-dark-blue: #00305B;
+$jaz-blue:#3D9BE9;
+$jaz-light-blue: #6FC3FA;
+
+$theme-white: #D8DBE2;
+$theme-light-blue: #01BAEF;
+$theme-red: #A62639;
+$theme-primary: #08415c;
+$theme-dark: #0B4F6C;
+$theme-darker: #cfcfcf;
 
 @mixin scrollable($color: #aebfbe, $background-color: white) {
   .scrollable::-webkit-scrollbar-track {
@@ -11,13 +78,59 @@ $accent-color: mat-color($accent-palette, 500);
   }
 
   .scrollable::-webkit-scrollbar {
-    width: 30px;
+    width: 12px;
     background-color: $background-color;
   }
 
   .scrollable::-webkit-scrollbar-thumb {
     background-color: #c7d0cf;
   }
+}
+
+@mixin white-gradient {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d8dbe2+0,aeb5c6+44,808ba5+100 */
+  background: #d8dbe2;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #d8dbe2 0%, #aeb5c6 44%, #808ba5 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #d8dbe2 0%, #aeb5c6 44%, #808ba5 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #d8dbe2 0%, #aeb5c6 44%, #808ba5 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d8dbe2', endColorstr='#808ba5', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+
+}
+
+@mixin gradient1 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00305b+0,0064bd+35,7e2017+75 */
+  background: #00305b;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #00305b 0%, #0064bd 35%, #7e2017 75%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #00305b 0%, #0064bd 35%, #7e2017 75%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #00305b 0%, #0064bd 35%, #7e2017 75%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00305b', endColorstr='#7e2017', GradientType=1);
+  /* IE6-9 */
+
+}
+
+@mixin gradient2 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0b4f6c+0,08415c+24,a62639+66 */
+  background: #0b4f6c;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #0b4f6c 0%, #08415c 24%, #a62639 66%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #0b4f6c 0%, #08415c 24%, #a62639 66%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #0b4f6c 0%, #08415c 24%, #a62639 66%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0b4f6c', endColorstr='#a62639', GradientType=1);
+  /* IE6-9 */
+
+
 }
 
 @mixin black-gradient {

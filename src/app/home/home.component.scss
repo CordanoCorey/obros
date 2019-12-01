@@ -1,0 +1,30 @@
+@import '../../common';
+
+#home {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  //margin-top: 532px;
+
+
+  .tagline {
+    width: 100%;
+    color: #08415c;
+    color: #0B4F6C;
+    color: #cfcfcf;
+    font-size: 48px;
+    font-family: 'Marcellus SC', serif;
+    width: 35%;
+    margin-right: 5%;
+  }
+
+  img {
+    width: 60%;
+    opacity: 0.3;
+    margin-left: -8%;
+  }
+}

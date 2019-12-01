@@ -1,6 +1,137 @@
 <div id="container">
-  <div id="content" class="scrollable" fxLayout="column" fxLayoutGap="16px" [style.height.px]="contentHeight"
-    [style.width.px]="contentWidth" [style.left.px]="windowWidth - contentWidth">
+  <div id="content" class="scrollable" [style.height.px]="windowHeight" [style.width.px]="windowWidth"
+    [style.left.px]="0">
+    <mat-icon id="toggle-menu">menu</mat-icon>
+    <img routerLink="/home" id="logo"
+      src="https://static.wixstatic.com/media/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.png/v1/fill/w_220,h_98,al_c,lg_1,q_80/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.webp">
+    <!-- <nav id="tabs" headerPosition="below" mat-tab-nav-bar>
+      <a mat-tab-link routerLink="/home" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+        <mat-icon>home</mat-icon>
+      </a>
+      <a mat-tab-link routerLink="/about-us" routerLinkActive #rla1="routerLinkActive" [active]="rla1.isActive">
+        About Us
+      </a>
+      <a mat-tab-link routerLink="/our-services" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive">
+        Our Services
+      </a>
+      <a mat-tab-link routerLink="/contact-us" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive">
+        Contact Us
+      </a>
+    </nav> -->
     <ng-content></ng-content>
+
+    <!--Interpersonal-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(0deg)'" [style.top.%]="17" [style.left.%]="14"
+      [style.font-size.px]="58">Interpersonal</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(0deg)'" [style.bottom.%]="26"
+      [style.right.%]="19">Interpersonal</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(0deg)'" [style.bottom.%]="22"
+      [style.left.%]="27">Interpersonal</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(0deg)'" [style.top.%]="23"
+      [style.right.%]="25">Interpersonal</span>
+    <!--Interpersonal-->
+
+    <!--Diversity-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(15deg)'" [style.bottom.%]="13"
+      [style.left.%]="10">Diversity</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(15deg)'" [style.top.%]="15"
+      [style.right.%]="10">Diversity</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(15deg)'" [style.bottom.%]="24"
+      [style.right.%]="4">Diversity</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(15deg)'" [style.top.%]="9"
+      [style.left.%]="18">Diversity</span>
+    <!--Diversity-->
+
+    <!--Teamwork-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(-45deg)'" [style.top.%]="28"
+      [style.left.%]="35">Teamwork</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(-45deg)'" [style.bottom.%]="10"
+      [style.right.%]="16">Teamwork</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(-45deg)'" [style.bottom.%]="24"
+      [style.right.%]="41">Teamwork</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(-45deg)'" [style.top.%]="12"
+      [style.right.%]="20">Teamwork</span>
+    <!--Teamwork-->
+
+    <!--Adversity-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(-90deg)'" [style.bottom.%]="50"
+      [style.left.%]="40">Adversity</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(90deg)'" [style.bottom.%]="50"
+      [style.right.%]="-2.5">Adversity</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(-90deg)'" [style.bottom.%]="10"
+      [style.right.%]="40">Adversity</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(90deg)'" [style.bottom.%]="12"
+      [style.left.%]="1">Adversity</span>
+    <!--Adversity-->
+
+    <!--Communication-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(-15deg)'" [style.top.%]="15"
+      [style.right.%]="30">Communication</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(-15deg)'" [style.bottom.%]="11"
+      [style.left.%]="26">Communication</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(-15deg)'" [style.bottom.%]="5"
+      [style.right.%]="27">Communication</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(-15deg)'" [style.top.%]="19"
+      [style.left.%]="29">Communication</span>
+    <!--Communication-->
+
+    <!--Integrity-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(-30deg)'" [style.bottom.%]="10"
+      [style.right.%]="5">Integrity</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(-30deg)'" [style.top.%]="10"
+      [style.left.%]="5">Integrity</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(-30deg)'" [style.top.%]="9"
+      [style.right.%]="5">Integrity</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(-30deg)'" [style.bottom.%]="5"
+      [style.left.%]="7">Integrity</span>
+    <!--Integrity-->
+
+    <!--Listening-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(20deg)'" [style.top.%]="7"
+      [style.left.%]="29">Listening</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(20deg)'" [style.bottom.%]="15"
+      [style.right.%]="30">Listening</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(20deg)'" [style.top.%]="10"
+      [style.right.%]="38">Listening</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(20deg)'" [style.bottom.%]="17"
+      [style.left.%]="17">Listening</span>
+    <!--Listening-->
+
+    <!--Leadership-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(90deg)'" [style.bottom.%]="45"
+      [style.right.%]="40">Leadership</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(-90deg)'" [style.bottom.%]="45"
+      [style.left.%]="-2.5">Leadership</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(90deg)'" [style.bottom.%]="14"
+      [style.left.%]="42">Leadership</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(-90deg)'" [style.top.%]="20"
+      [style.right.%]="-1">Leadership</span>
+    <!--Leadership-->
+
+    <!--Service-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(0deg)'" [style.top.%]="8"
+      [style.right.%]="50">Service</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(0deg)'" [style.bottom.%]="4"
+      [style.left.%]="36">Service</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(0deg)'" [style.top.%]="28" [style.right.%]="19"
+      [style.font-size.px]="48">Service</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(0deg)'" [style.bottom.%]="25" [style.left.%]="3"
+      [style.font-size.px]="48">Service</span>
+    <!--Service-->
+
+    <!--Exploration-->
+    <span @dimmer class="keyword" [style.transform]="'rotate(45deg)'" [style.top.%]="29" [style.right.%]="6"
+      [style.font-size.px]="58">Exploration</span>
+    <span @dimmer class="keyword" [style.transform]="'rotate(45deg)'" [style.bottom.%]="31"
+      [style.left.%]="35">Exploration</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(45deg)'" [style.top.%]="29"
+      [style.right.%]="41">Exploration</span>
+    <span @dimmer class="keyword alt" [style.transform]="'rotate(45deg)'" [style.top.%]="25"
+      [style.left.%]="2">Exploration</span>
+    <!--Exploration-->
   </div>
+
+  <button id="help" mat-fab>
+    <mat-icon aria-label="Email Us">help</mat-icon>
+  </button>
 </div>

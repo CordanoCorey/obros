@@ -1,0 +1,46 @@
+@import '~@angular/material/_theming';
+@import '../../common';
+
+#our-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #btbm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    width: 96%;
+    padding-bottom: 30px;
+    text-decoration: none;
+
+    h2 {
+      color: $theme-white;
+      font-family: 'Marcellus SC', serif;
+    }
+
+    .covers {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+
+      img {
+        @include mat-elevation(16);
+        height: 200px;
+      }
+    }
+  }
+
+  #btbm:hover {
+    @include mat-elevation(16);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  obros-speech-topics {
+    width: 80%;
+  }
+}

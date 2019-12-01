@@ -19,16 +19,18 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
-import { FormsModule, AccordionModule, DialogModule, PipesModule } from '@caiu/library';
+import { FormsModule, AccordionModule, DialogModule, PipesModule, WallpaperModule } from '@caiu/library';
 
 import { ContainerComponent } from './container/container.component';
 import { environment } from '../../environments/environment';
+import { EmailComponent } from './email/email.component';
 
 @NgModule({
-  declarations: [ContainerComponent],
+  declarations: [ContainerComponent, EmailComponent],
   imports: [
     CommonModule,
     AccordionModule,
+    WallpaperModule,
     DialogModule,
     DragDropModule,
     RouterModule,
@@ -54,6 +56,7 @@ import { environment } from '../../environments/environment';
   exports: [
     CommonModule,
     AccordionModule,
+    ContainerComponent,
     DialogModule,
     DragDropModule,
     RouterModule,
@@ -79,7 +82,9 @@ import { environment } from '../../environments/environment';
     MatTabsModule,
     PipesModule,
     RouterModule,
-    ContainerComponent
+    WallpaperModule,
+    ContainerComponent,
+    EmailComponent
   ]
 })
 export class SharedModule {

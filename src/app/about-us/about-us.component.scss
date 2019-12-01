@@ -1,0 +1,67 @@
+@import '~@angular/material/_theming';
+@import '../../common';
+
+#about-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+
+  .mission {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 500px;
+    width: 96%;
+    margin-bottom: 50px;
+
+    img {
+      @include mat-elevation(16);
+      width: 40%;
+    }
+
+    .mission-statement {
+      width: 40%;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      h1 {
+        text-align: center;
+        font-family: 'Marcellus SC', serif;
+        color: $theme-white;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .bro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+
+    img {
+      @include mat-elevation(16);
+      width: 25%;
+      z-index: 1;
+      margin: 5%;
+    }
+
+    .bio {
+      h2 {
+        color: $theme-white;
+        font-family: 'Marcellus SC', serif;
+      }
+
+      color: #fff;
+      width: 50%;
+    }
+  }
+}

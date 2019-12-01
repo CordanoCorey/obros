@@ -1,12 +1,22 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { SmartComponent, ViewSettingsActions, windowHeightSelector, windowWidthSelector } from '@caiu/library';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { SmartComponent, ViewSettingsActions, windowHeightSelector, windowWidthSelector, Image, build } from '@caiu/library';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'obros-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.scss']
+  styleUrls: ['./container.component.scss'],
+  animations: [trigger('dimmer', [
+    transition(':enter', [
+      style({ opacity: 1 }),
+      animate('4s', style({ opacity: 0.1 })),
+    ]),
+    transition(':leave', [
+      animate('4s', style({ opacity: 0 }))
+    ])
+  ])]
 })
 export class ContainerComponent extends SmartComponent implements OnInit {
   isDarkTheme = true;

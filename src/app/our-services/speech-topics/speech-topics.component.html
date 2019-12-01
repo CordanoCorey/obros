@@ -1,0 +1,13 @@
+<div class="speech-topics">
+  <div *ngFor="let topic of topics; index as i; trackBy: trackByFn;" class="scene">
+    <div class="card" (mousemove)="toBack(card, i)" (mouseleave)="toFront(card, i)" (click)="toggle(card, i)" #card>
+      <div class="card-face card-front">
+        {{topic.title}}
+      </div>
+      <div class="card-face card-back">
+        <h3>{{ topic.name }}</h3>
+        <p>{{topic.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

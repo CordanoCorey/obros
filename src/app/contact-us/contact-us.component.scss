@@ -1,0 +1,11 @@
+@import '~@angular/material/_theming';
+@import '../../common';
+
+#contact-us {
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/diversity.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
