@@ -30,9 +30,9 @@
     margin-left: 10%;
   }
 
-  img:hover {
-    opacity: 1;
-  }
+  // img:hover {
+  //   opacity: 1;
+  // }
 }
 
 @media only screen and (max-device-width: 1366px) {
@@ -53,14 +53,16 @@
       font-family: 'Marcellus SC', serif;
       width: 90%;
       text-align: center;
-      margin-top: 120px;
+      margin-top: 80px;
       margin-bottom: 30px;
     }
 
     img {
-      width: 100%;
+      height: unset;
+      width: 80%;
       opacity: 0.3;
       justify-self: flex-end;
+      margin-left: 0;
     }
   }
 }

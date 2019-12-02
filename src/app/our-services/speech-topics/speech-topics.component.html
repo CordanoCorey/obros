@@ -3,7 +3,7 @@
   <div *ngFor="let topic of topics; index as i; trackBy: trackByFn;" class="scene">
     <div class="card" (mousemove)="toBack(card, i)" (mouseleave)="toFront(card, i)" (click)="toggle(card, i)" #card>
       <div class="card-face card-front">
-        {{topic.title}}
+        <h5>{{topic.title}}</h5>
         <button color="primary" class="btn-email" mat-raised-button (click)="openEmail(topic.name)">Request
           Info</button>
       </div>
