@@ -104,3 +104,36 @@
     }
   }
 }
+
+@media only screen and (max-device-width: 1366px) {
+  #container {
+
+    #content {
+
+      #toggle-menu {
+        font-size: 40px;
+      }
+
+      #logo {
+        display: none;
+      }
+
+      #help {
+        @include mat-elevation(8);
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: $theme-dark;
+        height: 64px;
+        width: 64px;
+        z-index: 5;
+
+        mat-icon {
+          @include mat-elevation(16);
+          color: $theme-darker;
+          font-size: 72px;
+        }
+      }
+    }
+  }
+}

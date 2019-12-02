@@ -81,6 +81,7 @@ export class SpeechTopicsComponent implements OnInit {
   // }
 
   toBack(e, i) {
+    console.dir(e);
     // console.dir(e.target);
     // console.dir(e);
     this.activeIndex = i;
@@ -96,6 +97,7 @@ export class SpeechTopicsComponent implements OnInit {
   }
 
   toFront(e, i) {
+    console.dir(e);
     // console.dir(e.toElement);
     // console.dir(e.fromElement);
     // const card = e.target;
@@ -110,8 +112,10 @@ export class SpeechTopicsComponent implements OnInit {
 
   toggle(e, i) {
     this.activeIndex = i;
-    const card = e.target;
+    const card = e;
+    console.log(card.classList.value);
     card.classList.toggle('flipped');
+    console.log(card.classList.value);
   }
 
   public trackByFn(index, item) {

@@ -44,3 +44,28 @@
     width: 80%;
   }
 }
+
+@media only screen and (max-device-width: 1366px) {
+  #our-services {
+
+    #btbm {
+
+      .covers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        img {
+          height: unset;
+          width: 80%;
+          margin: 20px 0;
+        }
+      }
+    }
+
+    obros-speech-topics {
+      width: 90%;
+    }
+  }
+}

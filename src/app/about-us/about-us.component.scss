@@ -65,3 +65,65 @@
     }
   }
 }
+
+@media only screen and (max-device-width: 1366px) {
+
+  #about-us {
+
+    .mission {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-evenly;
+      min-height: 500px;
+      width: 96%;
+      margin-bottom: 50px;
+
+      img {
+        width: 90%;
+      }
+
+      .mission-statement {
+        width: 90%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        h1 {
+          text-align: center;
+          font-family: 'Marcellus SC', serif;
+          color: $theme-white;
+        }
+
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .bro {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        @include mat-elevation(16);
+        width: 90%;
+        z-index: 1;
+        margin: 0;
+      }
+
+      .bio {
+        h2 {
+          text-align: center;
+        }
+
+        width: 90%;
+      }
+    }
+
+    .bro:nth-of-type(3) {
+      flex-direction: column-reverse;
+    }
+  }
+}
