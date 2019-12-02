@@ -20,6 +20,10 @@
     h2 {
       color: $theme-white;
       font-family: 'Marcellus SC', serif;
+
+      .help {
+        margin-left: 10px;
+      }
     }
 
     .covers {

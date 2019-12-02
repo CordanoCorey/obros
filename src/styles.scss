@@ -5,7 +5,7 @@ html,
 body {
   display: flex;
   flex-direction: column;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   margin: 0;
   height: 100%;
   overflow: hidden;
@@ -28,6 +28,34 @@ obros-about-us {
   background-size: cover;
 }
 
+.help {
+  @include mat-elevation(8);
+  background-color: $theme-dark;
+  height: 64px;
+  width: 64px;
+  z-index: 5;
+
+  mat-icon {
+    @include mat-elevation(16);
+    color: $theme-darker;
+    font-size: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  mat-icon:hover {
+    color: $theme-red;
+  }
+}
+
+.help:hover {
+  background: $theme-white;
+
+  mat-icon {
+    color: $theme-primary;
+  }
+}
 
 /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
 @media only screen and (max-device-width: 1366px) {

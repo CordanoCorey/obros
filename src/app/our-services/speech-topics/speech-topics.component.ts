@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { SmartComponent } from '@caiu/library';
+import { Store } from '@ngrx/store';
+
+import { EmailComponent } from 'src/app/shared/email/email.component';
 
 @Component({
   selector: 'obros-speech-topics',
   templateUrl: './speech-topics.component.html',
   styleUrls: ['./speech-topics.component.scss']
 })
-export class SpeechTopicsComponent implements OnInit {
+export class SpeechTopicsComponent extends SmartComponent implements OnInit {
   topics = [
     {
       name: 'The Pita Principle',
@@ -52,9 +57,20 @@ export class SpeechTopicsComponent implements OnInit {
   flipped = [false, false, false, false, false, false, false, false];
   flipping = [false, false, false, false, false, false, false, false];
 
-  constructor() { }
+  constructor(public store: Store<any>, public dialog: MatDialog) {
+    super(store);
+  }
 
   ngOnInit() {
+  }
+
+  openEmail(subject = '') {
+    this.openDialog(EmailComponent, {
+      width: '600px',
+      data: {
+        subject: `Speech Topic: ${subject}`
+      }
+    });
   }
 
   // toBack(e: number) {
@@ -81,7 +97,7 @@ export class SpeechTopicsComponent implements OnInit {
   // }
 
   toBack(e, i) {
-    console.dir(e);
+    // console.dir(e);
     // console.dir(e.target);
     // console.dir(e);
     this.activeIndex = i;
@@ -97,7 +113,7 @@ export class SpeechTopicsComponent implements OnInit {
   }
 
   toFront(e, i) {
-    console.dir(e);
+    // console.dir(e);
     // console.dir(e.toElement);
     // console.dir(e.fromElement);
     // const card = e.target;
@@ -113,9 +129,9 @@ export class SpeechTopicsComponent implements OnInit {
   toggle(e, i) {
     this.activeIndex = i;
     const card = e;
-    console.log(card.classList.value);
+    // console.log(card.classList.value);
     card.classList.toggle('flipped');
-    console.log(card.classList.value);
+    // console.log(card.classList.value);
   }
 
   public trackByFn(index, item) {

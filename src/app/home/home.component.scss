@@ -8,22 +8,30 @@
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  //margin-top: 532px;
 
 
   .tagline {
     color: $theme-white;
     color: #1A2B3C;
-    font-size: 48px;
+    font-size: 40px;
     font-family: 'Marcellus SC', serif;
     width: 35%;
     margin-right: 5%;
+
+    p {
+      margin: 10px 0;
+    }
   }
 
   img {
-    width: 60%;
+    height: 50%;
     opacity: 0.3;
-    margin-left: -8%;
+    z-index: 1;
+    margin-left: 10%;
+  }
+
+  img:hover {
+    opacity: 1;
   }
 }
 

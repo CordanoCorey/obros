@@ -2,8 +2,9 @@
   <div id="content" class="scrollable parallax" [style.height.px]="windowHeight" [style.width.px]="windowWidth"
     [style.left.px]="0">
     <mat-icon id="toggle-menu">menu</mat-icon>
-    <img routerLink="/home" id="logo"
-      src="https://static.wixstatic.com/media/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.png/v1/fill/w_220,h_98,al_c,lg_1,q_80/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.webp">
+    <!-- <img routerLink="/home" id="logo"
+      src="https://static.wixstatic.com/media/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.png/v1/fill/w_220,h_98,al_c,lg_1,q_80/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.webp"> -->
+    <a id="logo" href="http://www.btbm.academy" target="_blank"><img src="assets/btbm-logo.PNG"></a>
     <!-- <nav id="tabs" headerPosition="below" mat-tab-nav-bar>
       <a mat-tab-link routerLink="/home" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
         <mat-icon>home</mat-icon>
@@ -100,7 +101,7 @@
 
       <!--Leadership-->
       <span @dimmer class="keyword" [style.transform]="'rotate(90deg)'" [style.bottom.%]="45"
-        [style.right.%]="40">Leadership</span>
+        [style.right.%]="43">Leadership</span>
       <span @dimmer class="keyword" [style.transform]="'rotate(-90deg)'" [style.bottom.%]="45"
         [style.left.%]="-2.5">Leadership</span>
       <span @dimmer class="keyword alt" [style.transform]="'rotate(90deg)'" [style.bottom.%]="14"
@@ -134,7 +135,7 @@
 
   </div>
 
-  <button id="help" mat-fab (click)="openEmail()">
+  <button class="help" mat-fab color="primary" (click)="openEmail()">
     <mat-icon aria-label="Email Us">help</mat-icon>
   </button>
 </div>

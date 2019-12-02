@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { Image, SmartComponent, build } from '@caiu/library';
 import { Store } from '@ngrx/store';
+
+import { EmailComponent } from '../shared/email/email.component';
 
 @Component({
   selector: 'obros-our-services',
@@ -9,7 +12,7 @@ import { Store } from '@ngrx/store';
 })
 export class OurServicesComponent extends SmartComponent implements OnInit {
 
-  constructor(public store: Store<any>) {
+  constructor(public store: Store<any>, public dialog: MatDialog) {
     super(store);
   }
 
@@ -24,6 +27,17 @@ export class OurServicesComponent extends SmartComponent implements OnInit {
       build(Image, { src: 'assets/btbm-best-practices-manual.PNG', height: 375, width: 299 }),
       build(Image, { src: 'assets/btbm.PNG', height: 376, width: 301 }),
     ];
+  }
+
+
+
+  openEmail(subject = '') {
+    this.openDialog(EmailComponent, {
+      width: '600px',
+      data: {
+        subject
+      }
+    });
   }
 
   ngOnInit() {

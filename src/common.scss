@@ -102,7 +102,7 @@ $theme-darker: #cfcfcf;
 
 }
 
-@mixin gradient1 {
+@mixin primary-gradient {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00305b+0,0064bd+35,7e2017+75 */
   background: #00305b;
   /* Old browsers */
@@ -117,7 +117,7 @@ $theme-darker: #cfcfcf;
 
 }
 
-@mixin gradient2 {
+@mixin bg-gradient {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0b4f6c+0,08415c+24,a62639+66 */
   background: #0b4f6c;
   /* Old browsers */

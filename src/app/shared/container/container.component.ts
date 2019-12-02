@@ -56,12 +56,14 @@ export class ContainerComponent extends SmartComponent implements OnInit {
 
   ngOnInit() {
     this.sync(['windowHeight', 'windowWidth']);
-    this.windowWidth$.subscribe(x => { console.log(x); });
   }
 
-  openEmail() {
+  openEmail(subject = '') {
     this.openDialog(EmailComponent, {
-      width: '800px'
+      width: '600px',
+      data: {
+        subject
+      }
     });
   }
 
