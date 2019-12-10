@@ -58,7 +58,7 @@ $accent-palette: (50: #eb8c9b,
     A700: white));
 $primary-color: mat-color($primary-palette, 500);
 $accent-color: mat-color($accent-palette, 500);
-
+$dark-primary-color: #1a2b3c;
 $jaz-primary: #00ADEF;
 $jaz-accent: #ED3101;
 $jaz-dark-blue: #00305B;
@@ -103,18 +103,32 @@ $theme-darker: #cfcfcf;
 }
 
 @mixin primary-gradient {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00305b+0,0064bd+35,7e2017+75 */
-  background: #00305b;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#022f45+0,08415c+53,175370+100 */
+  background: #022f45;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #00305b 0%, #0064bd 35%, #7e2017 75%);
+  background: -moz-linear-gradient(top, #022f45 0%, #08415c 53%, #175370 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #00305b 0%, #0064bd 35%, #7e2017 75%);
+  background: -webkit-linear-gradient(top, #022f45 0%, #08415c 53%, #175370 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #00305b 0%, #0064bd 35%, #7e2017 75%);
+  background: linear-gradient(to bottom, #022f45 0%, #08415c 53%, #175370 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00305b', endColorstr='#7e2017', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#022f45', endColorstr='#175370', GradientType=0);
   /* IE6-9 */
 
+}
+
+@mixin dark-primary-gradient {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#435669+0,1a2b3c+100 */
+  background: #435669;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #435669 0%, #1a2b3c 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #435669 0%, #1a2b3c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #435669 0%, #1a2b3c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#435669', endColorstr='#1a2b3c', GradientType=1);
+  /* IE6-9 */
 }
 
 @mixin bg-gradient {

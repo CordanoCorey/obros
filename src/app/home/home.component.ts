@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent extends SmartComponent implements OnInit {
+  scrollTop = 0;
   windowHeight$: Observable<number>;
   windowWidth$: Observable<number>;
 
@@ -18,7 +19,15 @@ export class HomeComponent extends SmartComponent implements OnInit {
     this.windowWidth$ = windowWidthSelector(store);
   }
 
+  get top(): boolean {
+    return this.scrollTop < 200;
+  }
+
   ngOnInit() {
+  }
+
+  onmScroll(e) {
+    console.dir(e);
   }
 
 }

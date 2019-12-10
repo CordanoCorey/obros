@@ -1,8 +1,7 @@
 <form ngNoForm action="http://formspree.io/gelbaughcm@gmail.com" method="POST">
   <input placeholder="Subject" type="text" name="subject" [value]="subject" required>
   <input placeholder="Name" type="text" name="sender" value="" required>
-  <input placeholder="Email address" type="email" onblur="this.setAttribute('value', this.value);" value=""
-    name="_replyto" id="replyto" required>
+  <input placeholder="Email Address" type="email" value="" name="_replyto" id="replyto" required>
   <span class="validation-text">Please enter a valid email address.</span>
   <div class="flex">
     <textarea placeholder="Message" rows="1" name="message" id="emailmessage" required></textarea>

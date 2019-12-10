@@ -1,11 +1,17 @@
-<obros-container>
-  <div id="home" class="scrollable" [style.height.px]="windowHeight$ | async" [style.width.px]="windowWidth$ | async">
-    <img src="assets/obros.png">
-    <div class="tagline">
-      <p>Build character.</p>
-      <p>Develop interpersonal skills.</p>
-      <p>Overcome adversity.</p>
-      <p>Maximize career potential.</p>
+<obros-container (scrolling)="scrollTop = $event">
+  <div id="home" class="scrollable" [style.height.px]="(windowHeight$ | async) - 64">
+    <h1 class="headline" [style.padding-top.px]="50">We are the O Brothers...</h1>
+    <div class="middle"><img src="assets/obros.png">
+      <div class="tagline">
+        <span class="intro">...and we're here to help</span>
+        <p>Build character.</p>
+        <p>Develop interpersonal skills.</p>
+        <p>Overcome adversity.</p>
+        <p>Maximize career potential.</p>
+      </div>
+    </div>
+    <div class="bottom">
+      <img *ngIf="top" class="scroll-down" src="assets/scroll-down.gif">
     </div>
   </div>
   <obros-about-us></obros-about-us>

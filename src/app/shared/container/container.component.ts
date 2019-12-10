@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
+import { trigger, transition, style, animate, state } from '@angular/animations';
 import { MatDialog } from '@angular/material';
-import { SmartComponent, ViewSettingsActions, windowHeightSelector, windowWidthSelector, Image, build } from '@caiu/library';
+import { SmartComponent, ViewSettingsActions, windowHeightSelector, windowWidthSelector, sidenavOpenedSelector, SidenavActions } from '@caiu/library';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -18,11 +18,64 @@ import { EmailComponent } from '../email/email.component';
     ]),
     transition(':leave', [
       animate('4s', style({ opacity: 0 }))
-    ])
-  ])]
+    ])]),
+  trigger('sidenavState', [
+    state(
+      'closed',
+      style({
+        width: '0px'
+      })
+    ),
+    state(
+      'open',
+      style({
+        width: '335px'
+      })
+    ),
+    transition('closed => open', animate('350ms ease-in')),
+    transition('open => closed', animate('350ms ease-out'))
+  ]),
+  trigger('sidenavPadding', [
+    state(
+      'closed',
+      style({
+        'padding-left': '0px'
+      })
+    ),
+    state(
+      'open',
+      style({
+        'padding-left': '335px'
+      })
+    ),
+    transition('closed => open', animate('350ms ease-in')),
+    transition('open => closed', animate('350ms ease-out'))
+  ]),
+  trigger('contentState', [
+    state(
+      'closed',
+      style({
+        left: '0px',
+        width: '100%'
+      })
+    ),
+    state(
+      'open',
+      style({
+        left: '335px',
+        width: 'calc(100% - 335px)'
+      })
+    ),
+    transition('closed => open', animate('350ms ease-in')),
+    transition('open => closed', animate('350ms ease-out'))
+  ])
+  ]
 })
 export class ContainerComponent extends SmartComponent implements OnInit {
+  @Output() scrolling = new EventEmitter<number>();
   isDarkTheme = true;
+  sidenavOpened = true;
+  sidenavOpened$: Observable<boolean>;
   windowHeight = 0;
   windowHeight$: Observable<number>;
   windowWidth = 0;
@@ -30,16 +83,17 @@ export class ContainerComponent extends SmartComponent implements OnInit {
 
   constructor(public store: Store<any>, public dialog: MatDialog, private elementRef: ElementRef) {
     super(store);
+    this.sidenavOpened$ = sidenavOpenedSelector(store);
     this.windowHeight$ = windowHeightSelector(store);
     this.windowWidth$ = windowWidthSelector(store);
   }
 
   get contentHeight(): number {
-    return this.windowHeight - 136;
+    return this.windowHeight;
   }
 
   get contentWidth(): number {
-    return this.windowWidth;
+    return this.sidenavOpened ? this.windowWidth - 335 : this.windowWidth;
   }
 
   get isMobile(): boolean {
@@ -54,8 +108,17 @@ export class ContainerComponent extends SmartComponent implements OnInit {
     );
   }
 
+  get sidenavWidth(): number {
+    return this.sidenavOpened ? (this.isMobile ? this.windowWidth : 335) : 0;
+  }
+
   ngOnInit() {
-    this.sync(['windowHeight', 'windowWidth']);
+    this.sync(['sidenavOpened', 'windowHeight', 'windowWidth']);
+  }
+
+  onScroll(e) {
+    const scrollTop = e.srcElement.scrollTop;
+    this.scrolling.emit(scrollTop);
   }
 
   openEmail(subject = '') {
@@ -65,6 +128,10 @@ export class ContainerComponent extends SmartComponent implements OnInit {
         subject
       }
     });
+  }
+
+  toggleSidenav() {
+    this.store.dispatch(SidenavActions.toggle());
   }
 
   changeTheme() {

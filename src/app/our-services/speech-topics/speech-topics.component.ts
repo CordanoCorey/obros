@@ -97,30 +97,23 @@ export class SpeechTopicsComponent extends SmartComponent implements OnInit {
   // }
 
   toBack(e, i) {
-    // console.dir(e);
-    // console.dir(e.target);
-    // console.dir(e);
     this.activeIndex = i;
-    // const card = e.target;
-    const card = e;
     setTimeout(() => {
-      card.classList.add('flipped');
-      card.classList.add('flipping');
+      e.classList.add('flipped');
+      e.classList.add('flipping');
     }, 0);
     setTimeout(() => {
-      card.classList.remove('flipping');
+      e.classList.remove('flipping');
     }, 800);
   }
 
   toFront(e, i) {
-    // console.dir(e);
-    // console.dir(e.toElement);
-    // console.dir(e.fromElement);
-    // const card = e.target;
-    const card = e;
+    if (this.activeIndex === i) {
+      this.activeIndex = null;
+    }
     const timer = setInterval(() => {
-      if (!card.classList.contains('flipping')) {
-        card.classList.remove('flipped');
+      if (!e.classList.contains('flipping') && this.activeIndex !== i) {
+        e.classList.remove('flipped');
         clearInterval(timer);
       }
     }, 300);
@@ -129,9 +122,7 @@ export class SpeechTopicsComponent extends SmartComponent implements OnInit {
   toggle(e, i) {
     this.activeIndex = i;
     const card = e;
-    // console.log(card.classList.value);
     card.classList.toggle('flipped');
-    // console.log(card.classList.value);
   }
 
   public trackByFn(index, item) {

@@ -1,0 +1,36 @@
+@import '~@angular/material/_theming';
+@import '../../../common';
+
+#sidenav {
+  @include dark-primary-gradient();
+  opacity: 0.9;
+  height: 100%;
+  width: 100%;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .mat-button {
+    width: 100%;
+    color: $theme-white;
+    height: 60px;
+    font-size: 24px;
+    font-family: 'Marcellus SC', serif;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 8;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    mat-icon {
+      font-size: 28px;
+      height: 28px;
+      width: 28px;
+      line-height: 28px;
+      margin-right: 10px;
+    }
+  }
+}

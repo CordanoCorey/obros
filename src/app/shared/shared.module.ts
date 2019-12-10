@@ -24,9 +24,10 @@ import { FormsModule, AccordionModule, DialogModule, PipesModule, WallpaperModul
 import { ContainerComponent } from './container/container.component';
 import { environment } from '../../environments/environment';
 import { EmailComponent } from './email/email.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
-  declarations: [ContainerComponent, EmailComponent],
+  declarations: [ContainerComponent, EmailComponent, SidenavComponent],
   imports: [
     CommonModule,
     AccordionModule,

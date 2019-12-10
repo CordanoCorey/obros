@@ -31,7 +31,7 @@ $theme: mat-light-theme($primary, $accent);
 mat-dialog-container {
   padding: 0 !important;
   height: 488px !important;
-  overflow-x: hidden !important;
+  overflow: hidden !important;
 
   .mat-dialog-title {
     position: relative;
