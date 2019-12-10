@@ -73,6 +73,7 @@ import { EmailComponent } from '../email/email.component';
 })
 export class ContainerComponent extends SmartComponent implements OnInit {
   @Output() scrolling = new EventEmitter<number>();
+  @Output() scrollTo = new EventEmitter<string>();
   isDarkTheme = true;
   sidenavOpened = true;
   sidenavOpened$: Observable<boolean>;
@@ -89,7 +90,7 @@ export class ContainerComponent extends SmartComponent implements OnInit {
   }
 
   get contentHeight(): number {
-    return this.windowHeight;
+    return this.windowHeight - 64;
   }
 
   get contentWidth(): number {
@@ -119,6 +120,13 @@ export class ContainerComponent extends SmartComponent implements OnInit {
   onScroll(e) {
     const scrollTop = e.srcElement.scrollTop;
     this.scrolling.emit(scrollTop);
+  }
+
+  onScrollTo(e: string) {
+    this.dispatch(SidenavActions.close());
+    setTimeout(() => {
+      this.scrollTo.emit(e);
+    }, 350);
   }
 
   openEmail(subject = '') {

@@ -2,8 +2,10 @@
 @import '../../../common';
 
 #container {
-  position: relative;
+  position: absolute;
   @include bg-gradient();
+  top: 0;
+  left: 0;
 
   .keyword {
     color: $jaz-light-blue;

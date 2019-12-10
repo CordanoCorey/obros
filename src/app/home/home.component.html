@@ -1,9 +1,9 @@
-<obros-container (scrolling)="scrollTop = $event">
-  <div id="home" class="scrollable" [style.height.px]="(windowHeight$ | async) - 64">
+<obros-container (scrolling)="scrollTop = $event" (scrollTo)="scrollTo($event)">
+  <div id="home" class="scrollable" [style.height.px]="(windowHeight$ | async) - 64" #home>
     <h1 class="headline" [style.padding-top.px]="50">We are the O Brothers...</h1>
     <div class="middle"><img src="assets/obros.png">
       <div class="tagline">
-        <span class="intro">...and we're here to help</span>
+        <span class="intro">...and together we will</span>
         <p>Build character.</p>
         <p>Develop interpersonal skills.</p>
         <p>Overcome adversity.</p>
@@ -14,6 +14,6 @@
       <img *ngIf="top" class="scroll-down" src="assets/scroll-down.gif">
     </div>
   </div>
-  <obros-about-us></obros-about-us>
-  <obros-our-services></obros-our-services>
+  <obros-about-us #aboutUs></obros-about-us>
+  <obros-our-services #ourServices></obros-our-services>
 </obros-container>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Image, SmartComponent, build } from '@caiu/library';
 import { Store } from '@ngrx/store';
@@ -12,7 +12,7 @@ import { EmailComponent } from '../shared/email/email.component';
 })
 export class OurServicesComponent extends SmartComponent implements OnInit {
 
-  constructor(public store: Store<any>, public dialog: MatDialog) {
+  constructor(public element: ElementRef, public store: Store<any>, public dialog: MatDialog) {
     super(store);
   }
 

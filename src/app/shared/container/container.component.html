@@ -5,23 +5,24 @@
         src="https://static.wixstatic.com/media/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.png/v1/fill/w_220,h_98,al_c,lg_1,q_80/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.webp"> -->
     <!-- <a id="logo" href="http://www.btbm.academy" target="_blank"><img src="assets/btbm-logo.PNG"></a> -->
     <nav id="tabs" headerPosition="below" mat-tab-nav-bar>
-      <button mat-button mat-tab-link>
+      <button mat-button mat-tab-link (click)="scrollTo.emit('HOME')">
         <mat-icon>home</mat-icon>
       </button>
-      <button mat-button mat-tab-link>
+      <button mat-button mat-tab-link (click)="scrollTo.emit('ABOUT_US')">
         <mat-icon>info</mat-icon>
       </button>
-      <button mat-button mat-tab-link>
+      <button mat-button mat-tab-link (click)="scrollTo.emit('OUR_SERVICES')">
         <mat-icon>room_service</mat-icon>
       </button>
-      <button mat-button mat-button mat-tab-link>
+      <button mat-button mat-button mat-tab-link (click)="openEmail('')">
         <mat-icon>contact_support</mat-icon>
       </button>
     </nav>
   </mat-toolbar>
   <div class="sidenav-container scrollable" [style.min-height.px]="windowHeight" [style.width.px]="sidenavWidth"
     [@sidenavState]="sidenavOpened ? 'open' : 'closed'">
-    <obros-sidenav [height]="contentHeight" [isMobile]="isMobile"></obros-sidenav>
+    <obros-sidenav [height]="contentHeight" [isMobile]="isMobile" (scrollTo)="onScrollTo($event)"
+      (contactUs)="openEmail($event)"></obros-sidenav>
   </div>
   <div id="content" class="scrollable parallax" [@contentState]="sidenavOpened ? 'open' : 'closed'"
     (scroll)="onScroll($event)" [style.height.px]="windowHeight - 64" [style.left.px]="windowWidth - contentWidth"
