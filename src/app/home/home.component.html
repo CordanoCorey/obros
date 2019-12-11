@@ -1,7 +1,8 @@
 <obros-container (scrolling)="scrollTop = $event" (scrollTo)="scrollTo($event)">
   <div id="home" class="scrollable" [style.height.px]="(windowHeight$ | async) - 64" #home>
     <h1 class="headline">We are the O Brothers...</h1>
-    <div class="middle"><img src="assets/obros.png">
+    <div class="middle">
+      <a href="http://www.btbm.academy" target="_blank"><img src="assets/obros.png"></a>
       <div class="tagline">
         <span class="intro">...and together we will</span>
         <p>Build character.</p>
