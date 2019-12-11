@@ -28,4 +28,11 @@ export class AppComponent extends SmartComponent {
     const windowWidth = e && e.currentTarget && e.currentTarget.innerWidth ? e.currentTarget.innerWidth : 0;
     this.dispatch(WindowActions.resize(build(WindowResize, { windowHeight, windowWidth })));
   }
+
+  @HostListener('window:orientationchange', ['$event'])
+  onOrientationChange(e: any) {
+    const windowHeight = e && e.currentTarget && e.currentTarget.innerHeight ? e.currentTarget.innerHeight : 0;
+    const windowWidth = e && e.currentTarget && e.currentTarget.innerWidth ? e.currentTarget.innerWidth : 0;
+    this.dispatch(WindowActions.resize(build(WindowResize, { windowHeight, windowWidth })));
+  }
 }
