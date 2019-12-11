@@ -141,7 +141,7 @@
     <!--Exploration-->
   </div>
 
-  <button class="help" mat-fab color="primary" (click)="openEmail()">
+  <button *ngIf="!isMobile" class="help" mat-fab color="primary" (click)="openEmail()">
     <mat-icon aria-label="Email Us">help</mat-icon>
   </button>
 </div>
