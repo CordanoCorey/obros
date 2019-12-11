@@ -113,11 +113,13 @@
       width: 100%;
       align-items: center;
       justify-content: flex-end;
+      justify-self: flex-end;
       max-height: 75%;
 
       a {
         width: 80%;
         height: unset;
+        margin: 0 !important;
 
         img {
           width: 100%;
