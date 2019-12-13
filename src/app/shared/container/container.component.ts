@@ -115,6 +115,7 @@ export class ContainerComponent extends SmartComponent implements OnInit {
 
   ngOnInit() {
     this.sync(['sidenavOpened', 'windowHeight', 'windowWidth']);
+    // this.dispatch(SidenavActions.open());
   }
 
   onScroll(e) {
@@ -123,10 +124,14 @@ export class ContainerComponent extends SmartComponent implements OnInit {
   }
 
   onScrollTo(e: string) {
-    this.dispatch(SidenavActions.close());
-    setTimeout(() => {
+    if (this.sidenavOpened) {
+      this.dispatch(SidenavActions.close());
+      setTimeout(() => {
+        this.scrollTo.emit(e);
+      }, 350);
+    } else {
       this.scrollTo.emit(e);
-    }, 350);
+    }
   }
 
   openEmail(subject = '') {

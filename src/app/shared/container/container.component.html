@@ -1,20 +1,21 @@
 <div id="container" [style.height.px]="windowHeight" [style.width.px]="windowWidth">
   <mat-toolbar id="header" class="mat-elevation-z16">
     <mat-icon id="toggle-menu" (click)="toggleSidenav()">menu</mat-icon>
+    <img routerLink="/home" id="logo" src="assets/logo.png">
     <!-- <img routerLink="/home" id="logo"
         src="https://static.wixstatic.com/media/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.png/v1/fill/w_220,h_98,al_c,lg_1,q_80/039c68_8905bf0027d948019e0c80c391bb8d92~mv2.webp"> -->
     <!-- <a id="logo" href="http://www.btbm.academy" target="_blank"><img src="assets/btbm-logo.PNG"></a> -->
-    <nav id="tabs" headerPosition="below" mat-tab-nav-bar>
-      <button mat-button mat-tab-link (click)="scrollTo.emit('HOME')">
+    <nav id="tabs">
+      <button mat-button (click)="onScrollTo('HOME')">
         <mat-icon>home</mat-icon>
       </button>
-      <button mat-button mat-tab-link (click)="scrollTo.emit('ABOUT_US')">
+      <button mat-button (click)="onScrollTo('ABOUT_US')">
         <mat-icon>info</mat-icon>
       </button>
-      <button mat-button mat-tab-link (click)="scrollTo.emit('OUR_SERVICES')">
+      <button mat-button (click)="onScrollTo('OUR_SERVICES')">
         <mat-icon>room_service</mat-icon>
       </button>
-      <button mat-button mat-button mat-tab-link (click)="openEmail('')">
+      <button mat-button (click)="openEmail('')">
         <mat-icon>contact_support</mat-icon>
       </button>
     </nav>

@@ -1,8 +1,15 @@
 <obros-container (scrolling)="scrollTop = $event" (scrollTo)="scrollTo($event)">
   <div id="home" class="scrollable" [style.height.px]="(windowHeight$ | async) - 64" #home>
-    <span class="headline">O Brothers</span>
-    <div class="middle">
-      <a href="http://www.btbm.academy" target="_blank"><img src="assets/obros.png"></a>
+    <div class="top">
+      <!-- <a href="http://www.btbm.academy" target="_blank"> -->
+      <img @flyinRight src="assets/diversity.jpg" #img>
+      <div @flyinLeft class="frosted" [style.width.px]="headlineWidth$ | async"><span class="headline"
+          [style.font-size.px]="headlineFontSize$ | async">Striving to Become
+          the Best Version of Ourselves</span>
+      </div>
+    </div>
+    <!-- <div class="middle">
+      <a href="http://www.btbm.academy" target="_blank"><img src="assets/diversity.jpg"></a>
       <div class="tagline">
         <span class="intro">Shape your future.</span>
         <p>Build character.</p>
@@ -10,7 +17,7 @@
         <p>Overcome adversity.</p>
         <p>Maximize career potential.</p>
       </div>
-    </div>
+    </div> -->
     <div class="bottom">
       <img *ngIf="top" class="scroll-down" src="assets/scroll-down.gif">
     </div>

@@ -26,6 +26,13 @@
       }
     }
 
+    p {
+      color: $theme-white;
+      width: 60%;
+      margin-bottom: 48px;
+      font-size: 20px;
+    }
+
     .covers {
       display: flex;
       flex-direction: row;
